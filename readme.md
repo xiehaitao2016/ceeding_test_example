@@ -1,5 +1,32 @@
 # Creating a New Ceedling Project
-ceedling new <prjname>
+
+## 环境准备
+ruby:
+sudo apt-get install ruby
+
+ceedling:
+gem install ceedling
+
+如果下载不了，需要更换国内的源:
+gem sources
+
+gem sources --remove https://rubygems.org/
+
+添加国内源:
+gem sources -a https://gems.ruby-china.com/
+或者
+gem sources --add https://mirrors.tuna.tsinghua.edu.cn/rubygems/
+
+检测方法：
+gem sources -l
+
+更新源缓存：
+gem sources -u
+
+## 使用ceedling创建工程
+ceedling new 工程名称
+如
+ceedling new blinky
 
 ## example1---如何使用ceedling进行TDD测试驱动开发
 ### create a module

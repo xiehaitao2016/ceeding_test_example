@@ -7,3 +7,6 @@
 [submodule "gcov-example"]
 	path = gcov-example
 	url = https://github.com/shenxianpeng/gcov-example.git
+[submodule "post-ceedling-demo"]
+	path = post-ceedling-demo
+	url = https://github.com/zaleos/post-ceedling-demo.git

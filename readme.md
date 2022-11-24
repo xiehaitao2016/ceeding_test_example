@@ -157,3 +157,6 @@ ceedling gcov:all utils:gcov
 
 4.查看gcov结果
 build/artifacts/gcov/目录下查看html结果
+
+## post-ceedling-demo
+ref:https://blog.zaleos.net/unit-testing-c-code-with-ceedling-and-cmock/

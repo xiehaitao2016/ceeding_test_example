@@ -1,3 +1,6 @@
 [submodule "Unity"]
 	path = Unity
 	url = https://github.com/ThrowTheSwitch/Unity.git
+[submodule "example3/blinky"]
+	path = example3/blinky
+	url = https://github.com/ElectronVector/add-ceedling-to-existing-project.git

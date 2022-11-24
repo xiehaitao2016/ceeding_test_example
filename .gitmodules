@@ -4,3 +4,6 @@
 [submodule "example3/blinky"]
 	path = example3/blinky
 	url = https://github.com/ElectronVector/add-ceedling-to-existing-project.git
+[submodule "gcov-example"]
+	path = gcov-example
+	url = https://github.com/shenxianpeng/gcov-example.git

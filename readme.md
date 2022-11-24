@@ -139,3 +139,21 @@ mock_gpio.c和mock_gpio.h
 5.测试
 
 ceedling test:all
+
+
+### gcov代码覆盖率
+参考：
+https://github.com/ThrowTheSwitch/Ceedling/blob/master/plugins/gcov/README.md
+https://blog.csdn.net/qq_42069216/article/details/118667607
+
+1.激活gcov
+![](images/2022-11-24-14-31-56.png)
+
+2.配置gcov
+![](images/2022-11-24-14-33-19.png)
+
+3.执行测试
+ceedling gcov:all utils:gcov
+
+4.查看gcov结果
+build/artifacts/gcov/目录下查看html结果

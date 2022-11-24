@@ -71,11 +71,99 @@
 # You will need to have gcov and gcovr both installed to make it work.
 # For more information on these options, see docs in plugins/gcov
 :gcov:
+  # Set to 'true' to enable HTML reports or set to 'false' to disable.
+  # Defaults to enabled. (gcovr --html)
+  # Deprecated - See the :reports: configuration option.
+  :html_report: [true]
+
+  :html_report_type: [detailed]
+
+  :utilities:
+    - gcovr           # Use gcovr to create the specified reports (default).
+    # - ReportGenerator # Use ReportGenerator to create the specified reports.
   :reports:
+    # Make an HTML summary report.
+    # Supported utilities: gcovr, ReportGenerator
+    # - HtmlBasic
+
+    # Make an HTML report with line by line coverage of each source file.
+    # Supported utilities: gcovr, ReportGenerator
     - HtmlDetailed
+
+    # Make a Text report, which may be output to the console with gcovr or a file in both gcovr and ReportGenerator.
+    # Supported utilities: gcovr, ReportGenerator
+    # - Text
+
+    # Make a Cobertura XML report.
+    # Supported utilities: gcovr, ReportGenerator
+    # - Cobertura
+
+    # Make a SonarQube XML report.
+    # Supported utilities: gcovr, ReportGenerator
+    # - SonarQube
+
+    # Make a JSON report.
+    # Supported utilities: gcovr
+    # - JSON
+
+    # Make a detailed HTML report with CSS and JavaScript included in every HTML page. Useful for build servers.
+    # Supported utilities: ReportGenerator
+    # - HtmlInline
+
+    # Make a detailed HTML report with a light theme and CSS and JavaScript included in every HTML page for Azure DevOps.
+    # Supported utilities: ReportGenerator
+    # - HtmlInlineAzure
+
+    # Make a detailed HTML report with a dark theme and CSS and JavaScript included in every HTML page for Azure DevOps.
+    # Supported utilities: ReportGenerator
+    # - HtmlInlineAzureDark
+
+    # Make a single HTML file containing a chart with historic coverage information.
+    # Supported utilities: ReportGenerator
+    # - HtmlChart
+
+    # Make a detailed HTML report in a single file.
+    # Supported utilities: ReportGenerator
+    # - MHtml
+
+    # Make SVG and PNG files that show line and / or branch coverage information.
+    # Supported utilities: ReportGenerator
+    # - Badges
+
+    # Make a single CSV file containing coverage information per file.
+    # Supported utilities: ReportGenerator
+    # - CsvSummary
+
+    # Make a single TEX file containing a summary for all files and detailed reports for each files.
+    # Supported utilities: ReportGenerator
+    # - Latex
+
+    # Make a single TEX file containing a summary for all files.
+    # Supported utilities: ReportGenerator
+    # - LatexSummary
+
+    # Make a single PNG file containing a chart with historic coverage information.
+    # Supported utilities: ReportGenerator
+    # - PngChart
+
+    # Command line output interpreted by TeamCity.
+    # Supported utilities: ReportGenerator
+    # - TeamCitySummary
+
+    # Make a text file in lcov format.
+    # Supported utilities: ReportGenerator
+    # - lcov
+
+    # Make a XML file containing a summary for all classes and detailed reports for each class.
+    # Supported utilities: ReportGenerator
+    # - Xml
+
+    # Make a single XML file containing a summary for all files.
+    # Supported utilities: ReportGenerator
+    # - XmlSummary
   :gcovr:
-    :html_medium_threshold: 75
-    :html_high_threshold: 90
+    # :html_medium_threshold: 75
+    # :html_high_threshold: 90
 
 #:tools:
 # Ceedling defaults to using gcc for compiling, linking, etc.
@@ -100,4 +188,5 @@
   :enabled:
     - stdout_pretty_tests_report
     - module_generator
+    - gcov
 ...

@@ -70,10 +70,14 @@
 # For more information on these options, see docs in plugins/gcov
 :gcov:
   :reports:
+  - Cobertura
     - HtmlDetailed
+    - SonarQube
+    - Badges
   :gcovr:
     :html_medium_threshold: 75
     :html_high_threshold: 90
+    :xml_pretty: true
 
 #:tools:
 # Ceedling defaults to using gcc for compiling, linking, etc.
@@ -98,4 +102,5 @@
   :enabled:
     - stdout_pretty_tests_report
     - module_generator
+    - gcov
 ...

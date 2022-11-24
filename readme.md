@@ -57,19 +57,22 @@ test_WhenTheHeadlightSwitchIsOff_ThenTheHeadLightsAreOff
 
 通过Mocking技术，可以将依赖硬件的层序解耦成下面的形式：
 
-image.png
+![](images/2022-11-24-09-40-27.png)
 
+
+![](images/2022-11-24-09-45-45.png)
 
 ## example2---如何使用mock技术解耦硬件依赖
 本例子的硬件结构如下：
-![](d:/vscode_imgs/images/2022-11-24-09-36-31.png)
+
+![](images/2022-11-24-09-45-17.png)
 
 1.创建温度传感器模块
 ceedling module:create[tempSensor]
 
 假设温度传感器寄存器值和实际温度的对应关系如下：
 
-image.png
+![](images/2022-11-24-09-46-38.png)
 
 则写出test_whenTempRegisterReadsMaxValue_thenTheTempIsTheMaxValue测试用例代码：
 
@@ -86,11 +89,12 @@ ceedling
 ## example3---如何对已有的项目使用Ceedling进行单元测试
 
 通常情况下，你发布bin并测试的方法如下：
-image.png
 
+![](images/2022-11-24-09-47-14.png)
 
 TDD测试开发时，使用ceedling增加单元测试代码并单独发布，不影响现有的发布代码
-image.png
+![](images/2022-11-24-09-48-08.png)
+
 
 ### 以已有的一个项目为例
 git clone https://github.com/ElectronVector/add-ceedling-to-existing-project.git
@@ -109,8 +113,7 @@ ceedling module:create[led]
 2.添加更多的源文件目录路径
 某些源文件是由第三方提供的，可以通过配置project.yml文件，设置搜索路径：
 
-image.png
-
+![](images/2022-11-24-09-49-44.png)
 
 3.添加需要mock的头文件到test_led.c里
 
@@ -122,9 +125,12 @@ mock_gpio.c和mock_gpio.h
 
 4. 添加其它的头文件到ceedling搜索路径
 
-image.png
+![](images/2022-11-24-09-51-24.png)
+
 
 默认对于extern的API接口，是不是mocking的，如果需要对extern的API也生成mock，需要在project.yml里添加配置：
+
+![](images/2022-11-24-09-52-27.png)
 
 :cmock:
 

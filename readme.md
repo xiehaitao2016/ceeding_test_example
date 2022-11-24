@@ -55,8 +55,6 @@ test_WhenTheHeadlightSwitchIsOff_ThenTheHeadLightsAreOff
 
 通过仿冒硬件接口，可以不需要实际的硬件来进行单元测试
 
-image.png
-
 通过Mocking技术，可以将依赖硬件的层序解耦成下面的形式：
 
 image.png
@@ -64,8 +62,7 @@ image.png
 
 ## example2---如何使用mock技术解耦硬件依赖
 本例子的硬件结构如下：
-
-image.png
+![](d:/vscode_imgs/images/2022-11-24-09-36-31.png)
 
 1.创建温度传感器模块
 ceedling module:create[tempSensor]

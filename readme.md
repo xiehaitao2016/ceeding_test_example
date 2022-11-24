@@ -160,3 +160,34 @@ build/artifacts/gcov/目录下查看html结果
 
 ## post-ceedling-demo
 ref:https://blog.zaleos.net/unit-testing-c-code-with-ceedling-and-cmock/
+### basic example
+step1_skeleton_example
+用于测试基本的函数功能，主要使用Unity的接口和宏定义
+
+### 测试中用到了外部的函数库
+需要修改project.yml，将头文件路径和lib库文件路径写入到project.yml里
+
+![](images/2022-11-24-16-12-32.png)
+
+### 支援文件
+有时候，需要用到一些用于帮助测试的文件，这些文件只用于测试，不希望被编译到最终的binary里。这种文件被称为支援文件。
+可以把支援文件放到特定的目录里，并通过配置project.yml，可以在测试是编译使用，而不会对正式的代码产生影响
+
+![](images/2022-11-24-16-16-00.png)
+
+
+### 内存泄漏检测Valgrind
+Valgrind用于检测C代码中有无内存泄漏，可以跟Ceedling接口，测试代码是否存在内存泄漏的问题
+sudo apt-get install valgrind
+
+![](images/2022-11-24-16-18-17.png)
+
+### CMock功能
+有时候，需要模拟函数的调用，返回值等情况，会用到CMock
+step5_mocking
+
+### 深层次依赖关系问题
+step6_deep_dependencies
+
+step7_auto_deep_linking
+![](images/2022-11-24-16-23-28.png)

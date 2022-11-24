@@ -43,8 +43,9 @@
 //
 //*****************************************************************************
 int
-main(void)
+app_main(void)
 {
+    int i;
     volatile uint32_t ui32Loop;
 
     //
@@ -57,6 +58,7 @@ main(void)
     //
     while(!SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOG))
     {
+        return -1;
     }
 
     //
@@ -68,30 +70,36 @@ main(void)
     //
     // Loop forever.
     //
-    while(1)
+    // while(1)
+    for (i = 0; i < 10; i++)
     {
-        //
-        // Turn on the LED.
-        //
-        led_turn_on();
-
-        //
-        // Delay for a bit.
-        //
-        for(ui32Loop = 0; ui32Loop < 200000; ui32Loop++)
+        /* code */
         {
-        }
+            //
+            // Turn on the LED.
+            //
+            led_turn_on();
 
-        //
-        // Turn off the LED.
-        //
-        led_turn_off();
+            //
+            // Delay for a bit.
+            //
+            for(ui32Loop = 0; ui32Loop < 200000; ui32Loop++)
+            {
+            }
 
-        //
-        // Delay for a bit.
-        //
-        for(ui32Loop = 0; ui32Loop < 200000; ui32Loop++)
-        {
+            //
+            // Turn off the LED.
+            //
+            led_turn_off();
+
+            //
+            // Delay for a bit.
+            //
+            for(ui32Loop = 0; ui32Loop < 200000; ui32Loop++)
+            {
+            }
         }
     }
+    
+    return 0;
 }
